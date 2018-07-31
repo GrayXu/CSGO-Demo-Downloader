@@ -11,7 +11,7 @@
 
 A CS:GO demo downloader used to solve corrupt download problem on Chinese server.
 
-Tips: Make all your demos show "download damage" in game menu, and run this script in CS:GO's replays directory.
+Tips: Make all your demos show "corrupt download" in game menu, and run this script in CS:GO's replays directory.
 (dir: "...\SteamLibrary\steamapps\common\Counter-Strike Global Offensive\csgo\replays")
 
 refer: [国服 CSGO 我的比赛录像下载损坏的解决方法](https://tieba.baidu.com/p/5579612896?red_tag=3099635424)
