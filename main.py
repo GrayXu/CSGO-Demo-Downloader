@@ -21,26 +21,34 @@ infoKeyList = []
 nameList = []
 
 list = os.listdir()
+#get all info
 for i in list:
     if i.split('.')[-1] == "info":
-
         temp = i.split('_')
         infoKeyList.append(temp[1]+"_"+temp[2])
         nameList.append(i[:-5])
+        
+#clean list
+for i in list:
+    if i.split('.')[-1] == "dem":
+        temp = i.split('_')
+        nameList.remove(i)
+        infoKeyList.remove(temp[1]+"_"+temp[2])
 
-print("We would download "+str(len(infoKeyList))+" demo(s)")
+print("We would download "+str(len(infoKeyList))+" demo(s)")        
+        
 
 for i in range(len(infoKeyList)):
-
-    # download
-    savePath = os.path.join(os.getcwd(), nameList[i]+".bz2")
+    
+    #download
+    savePath = os.path.join(os.getcwd(),nameList[i]+".bz2")
     print("start downloading "+str(i+1))
     print(savePath)
     url = former + infoKeyList[i] + latter
     request.urlretrieve(url, savePath)
     print("end downloading "+str(i+1))
-
-    # decompress
+    
+    #decompress
     print("start depressing "+str(i+1))
     newfilepath = os.path.join(os.getcwd(), nameList[i])
     print(newfilepath)
